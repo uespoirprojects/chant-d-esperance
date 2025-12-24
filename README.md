@@ -1,50 +1,54 @@
-# Welcome to your Expo app 👋
+# Chant d'Espérance - Application Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Application mobile React Native (Expo) pour afficher un recueil de cantiques chrétiens en créole et en français.
 
-## Get started
+## 🚀 Démarrage
 
-1. Install dependencies
+### Prérequis
 
-   ```bash
-   npm install
-   ```
+- Node.js (v18 ou supérieur)
+- npm ou yarn
+- Expo CLI
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Installation
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Lancer l'application
 
-## Learn more
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Puis choisissez votre plateforme :
+- Appuyez sur `a` pour Android
+- Appuyez sur `i` pour iOS
+- Appuyez sur `w` pour Web
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📱 Structure de l'application
 
-## Join the community
+- **Écran d'accueil** : 3 cartes principales (Créole, Français, Autres)
+- **Listes de chants** : Affichage avec recherche par titre ou numéro
+- **Sous-catégories** : Recueils complémentaires
+- **Détail des chants** : Affichage des paroles
 
-Join our community of developers creating universal apps.
+## 🎨 Thème
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+L'application supporte le mode clair et sombre automatiquement selon les préférences système.
+
+## 📚 Documentation Backend
+
+Voir [BACKEND_INTEGRATION.md](./BACKEND_INTEGRATION.md) pour la documentation complète sur l'intégration de l'API backend.
+
+## 🛠️ Technologies
+
+- React Native (Expo)
+- TypeScript
+- Expo Router (navigation)
+- React Native Safe Area Context
+
+## 📝 Notes
+
+Actuellement, l'application utilise des données simulées. L'intégration de l'API backend est documentée dans `BACKEND_INTEGRATION.md`.
