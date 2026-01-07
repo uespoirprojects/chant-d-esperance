@@ -23,12 +23,13 @@ export default function HomeScreen() {
       icon: 'book' as const,
       color: colors.purple,
     },
-    {
-      id: 'others',
-      title: 'Autres',
-      icon: 'folder' as const,
-      color: colors.emerald,
-    },
+    // Temporairement désactivé - tous les chants ne sont pas encore disponibles
+    // {
+    //   id: 'others',
+    //   title: 'Autres',
+    //   icon: 'folder' as const,
+    //   color: colors.emerald,
+    // },
   ];
 
   return (
@@ -73,7 +74,7 @@ export default function HomeScreen() {
               <Ionicons
                 name="chevron-forward"
                 size={24}
-                color={colors.mutedForeground}
+                color={colors.foreground}
               />
             </TouchableOpacity>
           ))}

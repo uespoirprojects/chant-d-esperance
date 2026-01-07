@@ -1,11 +1,17 @@
 {
   "chants": {
     "C.E.F": {
-      "1f": [
+      "0f": [
         "Crions à Dieu pour que notre patrie\nS'éveille enfin de son sommeil de mort.\nQue constamment tout enfant de Dieu prie !\nAh! Par la foi, changeons son triste sort.",
         "Oui, qu'à ses soins chacun de nous s'applique;\nNous l'obtiendrons ! Indicible bonheur !\nTemple, maison, rue et place publique,\nTout redira le beau nom du Sauveur.",
         "Allons! Allons! enfants du Dieu de gloire,\nLevons nos fronts trop longtemps abattus;\nComme aux beaux jours de notre sainte histoire,\nChrétiens, vivons ou mourrons pour Jésus.",
         "L'aurore vient de ce jour magnifique\nOù, secouant les fers de l'oppresseur.\nTout l'univers, dans un même cantique,\nProclamera le beau nom du Sauveur."
+      ],
+      "1f": [
+        "Gloire à Dieu notre Créateur!\nGloire à Christ notre Rédempteur!",
+        "Gloire à l'Esprit Consolateur!\nLouange et gloire au Dieu Sauveur!",
+        "Gloire à Dieu notre Créateur!\nGloire à Christ notre Rédempteur!",
+        "Gloire à l'Esprit Consolateur!\nLouange et gloire au Dieu Sauveur!"
       ],
       "2f": [
         "Grand Dieu,\nnous te bénissons\nNous célébrons\ntes louanges\nÉternel, nous t’exaltons\nDe concert avec les anges",
@@ -2516,7 +2522,7 @@
         "Wi, gen fòs, fòs\nWi, gen fòs anpil\nNan san Kris krisifye\nWi, gen fòs, fòs,\nWi gen fòs, fòs anpil\nNan presye san Kris,\nLagno Bondye"
       ],
       "4c": [
-        "Jezi lese’m mache ak ou\nByen kontan pou’m fè sèvis ou\nDi mwen\ntout sekrè ou genyen\nEde’m pa enkyè pou demen\nMontre’m ede kè moun ki pè Avek bon pawòl ou, Senyè\nGade’m tout tan\nnan bon chemen\nE kondwi mwen jiska la fen",
+        "Jezi lèse’m mache ak ou\nByen kontan pou’m fè sèvis ou\nDi mwen\ntout sekrè ou genyen\nEde’m pa enkyè pou demen\nMontre’m ede kè moun ki pè Avek bon pawòl ou, Senyè\nGade’m tout tan\nnan bon chemen\nE kondwi mwen jiska la fen",
         "Fè’m gen plis pasyans\ntankou ou\nGade’m tou pre ou tou le jou\nPou’m fè travay\nmwen ak la fwa\nE konfyans ou ki bay viktwa\nNan espwa ou ki kon solèy\nKlere tout bagay sou la tè\nNan la pè ou sèl ka ban nou\nLese’m viv, Jezi tou pre ou"
       ],
       "5c": [
@@ -3548,11 +3554,11 @@
       ],
       "130c": [
         "Koute Jezi ape rele,\nLi konn nouton’l yo an danje,\nLi pale yo\navèk amou,\nLi gen espwa jwenn yo yon jou",
-        "Chache yo,\nchache yo!\nEske ou konnen pri yon nanm?\nChache yo,\nchache yo!\nKris mande pou yo tout ansanm",
+        "Chache yo,\nchache yo!\nÈske ou konnen pri yon nanm?\nChache yo,\nchache yo!\nKris mande pou yo tout ansanm",
         "Anba soufrans, anba peche\nMouton yo\nsanti y'antrave;\nJezi mande\nnou ede Li\nDelivre\ngran avèk piti !",
-        "Chache yo,\nchache yo!\nEske ou konnen pri yon nanm?\nChache yo,\nchache yo!\nKris mande pou yo tout ansanm",
+        "Chache yo,\nchache yo!\nÈske ou konnen pri yon nanm?\nChache yo,\nchache yo!\nKris mande pou yo tout ansanm",
         "Eske Kris\nka konte sou nou?\nEske nou vle\nsèvi Li tou?\nPou rankonte\ntout moun pèdi\nGen delivrans la\nnan Jezi !",
-        "Chache yo,\nchache yo!\nEske ou konnen pri yon nanm?\nChache yo,\nchache yo!\nKris mande pou yo tout ansanm"
+        "Chache yo,\nchache yo!\nÈske ou konnen pri yon nanm?\nChache yo,\nchache yo!\nKris mande pou yo tout ansanm"
       ],
       "131c": [
         "Ogmante dezi mwen pou ou,\nE louvri kè m, Senyè;\nPou m kapab ranpli ak Lespri ou;\nPou m konnen sa ou vle pou m fè.\nFè lafwa m vini pi gran,\nFè li gen yon bèl kapasite.\nAlò, ranpli nanm mwen pou toujou\nAk tout richès ki nan ou."

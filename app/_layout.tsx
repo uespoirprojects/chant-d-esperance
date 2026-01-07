@@ -19,7 +19,8 @@ export default function RootLayout() {
           <Stack.Screen name="index" />
           <Stack.Screen name="creole" />
           <Stack.Screen name="french" />
-          <Stack.Screen name="others" />
+          {/* Temporairement désactivé - tous les chants ne sont pas encore disponibles */}
+          {/* <Stack.Screen name="others" /> */}
           <Stack.Screen name="subcategory/[id]" />
           <Stack.Screen name="song/[id]" />
         </Stack>

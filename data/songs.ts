@@ -15,21 +15,57 @@ interface SongsDataJson {
 
 //Cast du JSON importé vers notre interface
 const data = songsData as SongsDataJson;
+
+// CONSTANTES: Configuration des exceptions par langue
+// Vous pouvez maintenant spécifier différents chants pour chaque langue
+const SONGS_WITHOUT_REFRAIN_DETECTION: {
+  french: string[];
+  creole: string[];
+} = {
+  french: ['1'],   // Chants français sans détection de refrains
+  creole: [],      // Chants créoles sans détection de refrains
+};
+
+const SONGS_WITHOUT_NUMBERING: {
+  french: string[];
+  creole: string[];
+} = {
+  french: ['1'],   // Chants français sans numérotation
+  creole: [],      // Chants créoles sans numérotation
+};
+
 /**
  * Détecte si un slide (strophe) est un refrain
  * 
  * Un refrain est une strophe qui se répète plusieurs fois dans le même chant
  * 
+ * EXCEPTIONS: Les chants listés dans SONGS_WITHOUT_REFRAIN_DETECTION
+ * ne détecteront jamais de refrains automatiquement
+ * 
  * @param slide - Le texte de la strophe à vérifier
  * @param allSlides - Toutes les strophes du chant
  * @param currentIndex - L'index de la strophe actuelle (non utilisé pour l'instant)
+ * @param songNumber - Le numéro du chant (ex: "1f", "43c")
+ * @param language - La langue du chant ('french' ou 'creole')
  * @returns true si c'est un refrain (apparaît 2 fois ou plus), false sinon
  * 
  * Exemple:
  * Si dans un chant, la strophe "Alléluia, gloire à Dieu" apparaît 3 fois,
- * cette fonction retournera true pour cette strophe et sera considreée comme un refrain
+ * cette fonction retournera true pour cette strophe et sera considérée comme un refrain
  */
-const isRefrain = (slide: string, allSlides: string[], currentIndex: number): boolean => {
+const isRefrain = (
+  slide: string, 
+  allSlides: string[], 
+  currentIndex: number,
+  songNumber: string,
+  language: 'french' | 'creole'
+): boolean => {
+  // Vérifier si ce chant est dans la liste d'exceptions pour sa langue
+  const numericPart = songNumber.match(/\d+/)?.[0];
+  if (numericPart && SONGS_WITHOUT_REFRAIN_DETECTION[language].includes(numericPart)) {
+    return false;
+  }
+
   //Étape 1: Normaliser le texte pour la comparaison
   //C'est à dire on enlève les espaces superflus pour comparer uniquement le contenu
   const normalizedSlide = slide.trim().replace(/\s+/g, ' ');
@@ -129,9 +165,13 @@ const extractTitle = (slides: string[], number: string, language: 'french' | 'cr
  * - Les refrains sont marqués "Refrain" (français) ou "Refren" (créole)
  * - Les refrains ne sont PAS comptés dans la numérotation
  * 
+ * EXCEPTION: Les chants listés dans SONGS_WITHOUT_NUMBERING
+ * sont affichés en un seul bloc sans numérotation
+ * 
  * @param slides - Toutes les strophes du chant
  * @param language - La langue du chant ('french' ou 'creole')
- * @returns Le texte complet du chant avec numérotation
+ * @param songNumber - Le numéro du chant (ex: "1f", "43c")
+ * @returns Le texte complet du chant avec ou sans numérotation
  * 
  * Exemple avec le chant "Près de la croix":
  * Input: ["Jésus, garde-moi...", "Près de la croix...", "Près de la croix...", ...]
@@ -145,7 +185,14 @@ const extractTitle = (slides: string[], number: string, language: 'french' | 'cr
  *   2.
  *   Près de la croix...
  */
-const numberSlides = (slides: string[], language: 'french' | 'creole'): string => {
+const numberSlides = (slides: string[], language: 'french' | 'creole', songNumber: string): string => {
+  // Vérifier si ce chant ne doit PAS être numéroté pour sa langue
+  const numericPart = songNumber.match(/\d+/)?.[0];
+  if (numericPart && SONGS_WITHOUT_NUMBERING[language].includes(numericPart)) {
+    // Retourner tout le texte en un seul bloc, sans numérotation
+    return slides.join('\n\n');
+  }
+
   // Étape 1:Définir l'étiquette pour les refrains selon la langue
   const refrainLabel = language === 'creole' ? 'Refren' : 'Refrain';
   
@@ -157,7 +204,7 @@ const numberSlides = (slides: string[], language: 'french' | 'creole'): string =
   return slides
     .map((slide, index) => {
       // Vérifier si cette strophe est un refrain
-      if (isRefrain(slide, slides, index)) {
+      if (isRefrain(slide, slides, index, songNumber, language)) {
         // C'est un refrain: afficher "Refrain" ou "Refren"
         return `${refrainLabel}\n\n${slide}`;
       } else {
@@ -201,7 +248,7 @@ const transformSongs = (
         id: `${prefix}-${number}-${index}`,            // ID unique pour le chant
         number: "",                                    // Numéro vide (déjà dans le titre)
         title: extractTitle(slides, number, language), // Titre extrait intelligemment
-        lyrics: numberSlides(slides, language),        // Paroles numérotées avec refrains
+        lyrics: numberSlides(slides, language, number),        // Paroles numérotées avec refrains
       };
     });
 };
